@@ -1,3 +1,14 @@
+<?php
+// Initialize the session
+session_start();
+
+// Check if the user is logged in, if not then redirect him to login page
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: login.php");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -134,42 +145,38 @@
         <span></span>
         <span></span>
       </button>
-      <a class="navbar-brand text-brand" href="index.html">Sunshine<span class="color-b">Agency</span></a>
+      <a class="navbar-brand text-brand" href="index.php">Sunshine<span class="color-b">Agency</span></a>
 
       <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
         <ul class="navbar-nav">
 
           <li class="nav-item">
-            <a class="nav-link active" href="#">Admin</a>
+            <a class="nav-link active" href="index.php">Home</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link active" href="index.html">Home</a>
+            <a class="nav-link " href="../about.html">About</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link " href="about.html">About</a>
+            <a class="nav-link " href="../property-grid.html">Property</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link " href="property-grid.html">Property</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link " href="blog-grid.html">Blog</a>
+            <a class="nav-link " href="../blog-grid.html">Blog</a>
           </li>
 
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
             <div class="dropdown-menu">
-              <a class="dropdown-item " href="property-single.html">Property Description</a>
-              <a class="dropdown-item " href="blog-single.html">Blog Single</a>
-              <a class="dropdown-item " href="agents-grid.html">Our Agents Page </a>
-              <a class="dropdown-item " href="agent-single.html">Top Agents</a>
+              <a class="dropdown-item " href="../property-single.html">Property Description</a>
+              <a class="dropdown-item " href="../blog-single.html">Blog Single</a>
+              <a class="dropdown-item " href="../agents-grid.html">Our Agents Page </a>
+              <a class="dropdown-item " href="../agent-single.html">Top Agents</a>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="contact.html">Contact</a>
+            <a class="nav-link " href="../contact.html">Contact</a>
           </li>
         </ul>
       </div>
@@ -365,7 +372,7 @@
                 <h2 class="title-a">Latest Properties</h2>
               </div>
               <div class="title-link">
-                <a href="property-grid.html">All Property
+                <a href="../property-grid.html">All Property
                   <span class="bi bi-chevron-right"></span>
                 </a>
               </div>
@@ -433,7 +440,7 @@
                   <div class="card-overlay-a-content">
                     <div class="card-header-a">
                       <h2 class="card-title-a">
-                        <a href="property-single.html">157 Westlands
+                        <a href="../property-single.html">157 Westlands
                           <br /> Parklands</a>
                       </h2>
                     </div>
@@ -481,7 +488,7 @@
                   <div class="card-overlay-a-content">
                     <div class="card-header-a">
                       <h2 class="card-title-a">
-                        <a href="property-single.html">245 Milimani
+                        <a href="../property-single.html">245 Milimani
                           <br /> Milimani Park </a>
                       </h2>
                     </div>
@@ -489,7 +496,7 @@
                       <div class="price-box d-flex">
                         <span class="price-a">rent | Kshs 130,000</span>
                       </div>
-                      <a href="property-single.html" class="link-a">Click here to view
+                      <a href="../property-single.html" class="link-a">Click here to view
                         <span class="bi bi-chevron-right"></span>
                       </a>
                     </div>
@@ -584,7 +591,7 @@
                 <h2 class="title-a">Best Agents</h2>
               </div>
               <div class="title-link">
-                <a href="agents-grid.html">All Agents
+                <a href="../agents-grid.html">All Agents
                   <span class="bi bi-chevron-right"></span>
                 </a>
               </div>
@@ -601,7 +608,7 @@
                 <div class="card-header-d">
                   <div class="card-title-d align-self-center">
                     <h3 class="title-d">
-                      <a href="agent-single.html" class="link-two">Debra Ariola
+                      <a href="../agent-single.html" class="link-two">Debra Ariola
                         <br> Larnesa</a>
                     </h3>
                   </div>
@@ -775,7 +782,7 @@
                 <h2 class="title-a">Latest News</h2>
               </div>
               <div class="title-link">
-                <a href="blog-grid.html">All News
+                <a href="../blog-grid.html">All News
                   <span class="bi bi-chevron-right"></span>
                 </a>
               </div>
@@ -798,7 +805,7 @@
                     </div>
                     <div class="card-title-b">
                       <h2 class="title-2">
-                        <a href="blog-single.html">Modern Housing conditions.
+                        <a href="../blog-single.html">Modern Housing conditions.
                           <br> New with latest design</a>
                       </h2>
                     </div>
@@ -822,7 +829,7 @@
                     </div>
                     <div class="card-title-b">
                       <h2 class="title-2">
-                        <a href="blog-single.html">Transport Services.
+                        <a href="../blog-single.html">Transport Services.
                           <br> We can also offer after sell services like helping you in moving your properties</a>
                       </h2>
                     </div>
@@ -846,7 +853,7 @@
                     </div>
                     <div class="card-title-b">
                       <h2 class="title-2">
-                        <a href="blog-single.html">Modern parking lot experience
+                        <a href="../blog-single.html">Modern parking lot experience
                           <br> Control your Parking lot remotely from your car</a>
                       </h2>
                     </div>
@@ -1003,54 +1010,25 @@
               <div class="w-body-a">
                 <ul class="list-unstyled">
                   <li class="item-list-a">
-                    <i class="bi bi-chevron-right"></i> <a href="#">Site Map</a>
+                    <i class="bi bi-chevron-right"></i> <a href="../contact.html">Site Map</a>
                   </li>
                   <li class="item-list-a">
-                    <i class="bi bi-chevron-right"></i> <a href="#">Legal</a>
+                    <i class="bi bi-chevron-right"></i> <a href="../about.html">About</a>
                   </li>
                   <li class="item-list-a">
-                    <i class="bi bi-chevron-right"></i> <a href="#">Agent Admin</a>
+                    <i class="bi bi-chevron-right"></i> <a href="../blog-grid.html">Blog</a>
                   </li>
                   <li class="item-list-a">
-                    <i class="bi bi-chevron-right"></i> <a href="#">Careers</a>
+                    <i class="bi bi-chevron-right"></i> <a href="../property-grid.html">Property</a>
                   </li>
                   <li class="item-list-a">
-                    <i class="bi bi-chevron-right"></i> <a href="#">Affiliate</a>
+                    <i class="bi bi-chevron-right"></i> <a href="../agents-grid.html">Agents</a>
                   </li>
                   <li class="item-list-a">
                     <i class="bi bi-chevron-right"></i> <a href="#">Privacy Policy</a>
                   </li>
                 </ul>
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-12 col-md-4 section-md-t3">
-          <div class="widget-a">
-            <div class="w-header-a">
-              <h3 class="w-title-a text-brand">International sites</h3>
-            </div>
-            <div class="w-body-a">
-              <ul class="list-unstyled">
-                <li class="item-list-a">
-                  <i class="bi bi-chevron-right"></i> <a href="#">Venezuela</a>
-                </li>
-                <li class="item-list-a">
-                  <i class="bi bi-chevron-right"></i> <a href="#">China</a>
-                </li>
-                <li class="item-list-a">
-                  <i class="bi bi-chevron-right"></i> <a href="#">Hong Kong</a>
-                </li>
-                <li class="item-list-a">
-                  <i class="bi bi-chevron-right"></i> <a href="#">Argentina</a>
-                </li>
-                <li class="item-list-a">
-                  <i class="bi bi-chevron-right"></i> <a href="#">Singapore</a>
-                </li>
-                <li class="item-list-a">
-                  <i class="bi bi-chevron-right"></i> <a href="#">Philippines</a>
-                </li>
-              </ul>
             </div>
           </div>
         </div>
@@ -1067,16 +1045,16 @@
                 <a href="#">Home</a>
               </li>
               <li class="list-inline-item">
-                <a href="#">About</a>
+                <a href="../about.html">About</a>
               </li>
               <li class="list-inline-item">
-                <a href="#">Property</a>
+                <a href="../property-grid.html">Property</a>
               </li>
               <li class="list-inline-item">
-                <a href="#">Blog</a>
+                <a href="../blog-grid.html">Blog</a>
               </li>
               <li class="list-inline-item">
-                <a href="#">Contact</a>
+                <a href="../contact.html">Contact</a>
               </li>
             </ul>
           </nav>
